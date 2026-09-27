@@ -3,11 +3,14 @@ package me.lekrano.gunlk;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
+import me.lekrano.gunlk.ModEntities.LootDropEntity;
+import me.lekrano.gunlk.ModEntities.ModEntities;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.Vec3;
 
 public class lkCommands {
 
@@ -34,13 +37,21 @@ public class lkCommands {
                 () -> Component.literal("crates"),
                 true
         );
-        Entity entity = context.getSource().getEntity();
-        if (entity == null) return 0;
-        context.getSource().getLevel().setBlock(
-                entity.blockPosition(),
-                Blocks.BARREL.defaultBlockState(),
-                3
+        Entity player = context.getSource().getPlayer();
+        if (player == null) return 0;
+
+        ServerLevel level = context.getSource().getLevel();
+        Vec3 position = player.position();
+        LootDropEntity drop = new LootDropEntity(
+                ModEntities.LOOT_DROP.get(),
+                level
         );
+        drop.setPos(
+                position.x,
+                position.y + 10,
+                position.z
+        );
+        level.addFreshEntity(drop);
         return 1;
     }
 

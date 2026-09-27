@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "gunlk:block/loot_drop_block"
+    }
+  }
+}
