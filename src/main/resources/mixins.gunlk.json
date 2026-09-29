@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.lekrano.gunlk.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "FragGrenadeEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

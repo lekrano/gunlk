@@ -51,6 +51,7 @@ legacyForge {
             client()
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
+            jvmArguments.add("-Dmixin.config=mixins.gunlk.json")
             systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
         }
 
@@ -145,27 +146,25 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
     modImplementation "blank:tacz-1.20.1-1.1.8-hotfix"
     modImplementation "blank:tacz_tactical_breaching-forge-1.20.1-1.0.5"
 }
 
 // Uncomment the lines below if you wish to configure mixin. The mixin file should be named modid.mixins.json.
-/*
+
 mixin {
     add sourceSets.main, "${mod_id}.refmap.json"
-    config "${mod_id}.mixins.json"
-}
-
-dependencies {
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    config "mixins.${mod_id}.json"
 }
 
 jar {
     manifest.attributes([
-            "MixinConfigs": "${mod_id}.mixins.json"
+            "MixinConfigs": "mixins.${mod_id}.json"
     ])
 }
-*/
+
 
 // This block of code expands all declared replace properties in the specified resource targets.
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.
