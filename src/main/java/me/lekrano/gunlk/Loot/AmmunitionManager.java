@@ -76,25 +76,31 @@ public class AmmunitionManager {
             Map.entry("tacz:fn_evolys",         "tacz:308"          )
     );
     private static final Map<String, AmmunitionInfo> AMMUNITION = Map.ofEntries(
-            Map.entry("tacz:22wmr",         new AmmunitionInfo("tacz:22wmr",     1 ,80)),
-            Map.entry("tacz:9mm",           new AmmunitionInfo("tacz:9mm",       1 ,80)),
-            Map.entry("tacz:45acp",         new AmmunitionInfo("tacz:45acp",     1 ,80)),
-            Map.entry("tacz:57x28",         new AmmunitionInfo("tacz:57x28",     3 ,30)),
-            Map.entry("tacz:556x45",        new AmmunitionInfo("tacz:556x45",    2 ,60)),
-            Map.entry("tacz:58x42",         new AmmunitionInfo("tacz:58x42",     2 ,60)),
-            Map.entry("tacz:762x39",        new AmmunitionInfo("tacz:762x39",    2 ,60)),
-            Map.entry("tacz:308",           new AmmunitionInfo("tacz:308",       3 ,50)),
-            Map.entry("tacz:792x57",        new AmmunitionInfo("tacz:792x57",    3 ,50)),
-            Map.entry("tacz:357mag",        new AmmunitionInfo("tacz:357mag",    5 ,40)),
-            Map.entry("tacz:50ae",          new AmmunitionInfo("tacz:50ae",      5 ,40)),
-            Map.entry("tacz:500mag",        new AmmunitionInfo("tacz:500mag",    5 ,40)),
-            Map.entry("tacz:45_70",         new AmmunitionInfo("tacz:45_70",     5 ,40)),
-            Map.entry("tacz:338",           new AmmunitionInfo("tacz:338",       5 ,40)),
-            Map.entry("tacz:30_06",         new AmmunitionInfo("tacz:30_06",     5 ,40)),
-            Map.entry("tacz:50bmg",         new AmmunitionInfo("tacz:50bmg",     5 ,40)),
-            Map.entry("tacz:40mm",          new AmmunitionInfo("tacz:40mm",      8 ,20)),
-            Map.entry("tacz:rpg_rocket",    new AmmunitionInfo("tacz:rpg_rocket",10,20)),
-            Map.entry("tacz:12g",           new AmmunitionInfo("tacz:12g",       4 ,50))
+            // COMMON PISTOL / SMG
+            Map.entry("tacz:22wmr",      new AmmunitionInfo("tacz:22wmr",       1, 90)),
+            Map.entry("tacz:9mm",        new AmmunitionInfo("tacz:9mm",         1, 100)),
+            Map.entry("tacz:45acp",      new AmmunitionInfo("tacz:45acp",       2, 75)),
+            Map.entry("tacz:57x28",      new AmmunitionInfo("tacz:57x28",       2, 55)),
+            // INTERMEDIATE RIFLE
+            Map.entry("tacz:556x45",     new AmmunitionInfo("tacz:556x45",      3, 70)),
+            Map.entry("tacz:58x42",      new AmmunitionInfo("tacz:58x42",       3, 55)),
+            Map.entry("tacz:762x39",     new AmmunitionInfo("tacz:762x39",      3, 60)),
+            // FULL-POWER RIFLE
+            Map.entry("tacz:308",        new AmmunitionInfo("tacz:308",         5, 45)),
+            Map.entry("tacz:792x57",     new AmmunitionInfo("tacz:792x57",      5, 40)),
+            Map.entry("tacz:357mag",     new AmmunitionInfo("tacz:357mag",      5, 40)),
+            Map.entry("tacz:50ae",       new AmmunitionInfo("tacz:50ae",        5, 35)),
+            Map.entry("tacz:500mag",     new AmmunitionInfo("tacz:500mag",      6, 25)),
+            // LARGE / SPECIALIZED
+            Map.entry("tacz:45_70",      new AmmunitionInfo("tacz:45_70",       6, 30)),
+            Map.entry("tacz:30_06",      new AmmunitionInfo("tacz:30_06",       6, 35)),
+            Map.entry("tacz:338",        new AmmunitionInfo("tacz:338",         7, 25)),
+            Map.entry("tacz:50bmg",      new AmmunitionInfo("tacz:50bmg",       10, 15)),
+            // SHOTGUN
+            Map.entry("tacz:12g",        new AmmunitionInfo("tacz:12g",           4, 50)),
+            // EXPLOSIVE
+            Map.entry("tacz:40mm",       new AmmunitionInfo("tacz:40mm",          12, 10)),
+            Map.entry("tacz:rpg_rocket", new AmmunitionInfo("tacz:rpg_rocket",    20, 5))
     );
 
     public static void giveAmmunition(Player player) {
